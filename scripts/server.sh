@@ -1,4 +1,4 @@
-*# Server Configurations
+# Server Configurations
 # Author: Chandrashekar CR
 
 # Basic Hardware details
