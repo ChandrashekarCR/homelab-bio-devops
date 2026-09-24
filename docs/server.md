@@ -35,12 +35,12 @@ Produce an Infrastructure Inventory.
   * **Port 8787:** Web Service / Bio-DevOps Application (e.g., RStudio Server)
 
 ### Services
- - which services start automatically
- - which services are currently running
- - which ports they use
+ - which services start automatically:
+ - which services are currently running:
+ - which ports they use:
 
 ### Storage
- - available space
- - filesystem usage
- - mounted filesystems
- - where application data could eventually live
+ - available space: 349G
+ - filesystem usage: 20%
+ - mounted filesystems: /dev/sda2
+ - where application data could eventually live: Usually, the standard layout for database engines like PostgreSQL, MYSQL, Docker volumes are in /var/lib. Manually installed third party sofware is in /opt/.

@@ -19,3 +19,10 @@ echo -e "\n=== NETWORK ===" && ip -br a | grep "UP" | tr -s ' ' | cut -d ' ' -f1
 echo -e "\n=== IP ROUTE ===" && ip -br a | grep "UP" | grep -Po '(?<=\s)\d{1,3}(\.\d{1,3}){3}'
 
 echo -e "\n == PORTS ===" && ss -tuln | grep "LISTEN"
+
+# Services
+echo -e "\n=== SERVICES ENABLED ===" && systemctl list-unit-files --type=service --state=enabled
+echo -e "\n=== SERVICES RUNNING ===" && systemctl list-units --type=service --state=running
+
+# Storage
+echo -e "\n=== STORAGE ===" && df -Th
