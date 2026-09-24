@@ -1,4 +1,4 @@
-# Task 1 — Infrastructure assessment
+# Infrastructure assessment
 
 ## Objective
 
@@ -24,9 +24,9 @@ Produce an Infrastructure Inventory.
 
 ### Network
  - network interfaces: enp3s0 (Ethernet)
- - local IP address: XXX.XXX.0.8
- - default gateway: XXX.XXX.0.1
- - DNS configuration: XXX.XXX.0.1
+ - local IP address: XXX.XXX.X.X
+ - default gateway: XXX.XXX.X.X
+ - DNS configuration: XXX.XXX.X.X
  - whether the machine has a static or dynamic LAN address: It uses dynamic LAN address. But we need to change it to a static one. "proto dhcp" indicates that it was dynamic.
  - which ports are currently listening:
   * **Port 22:** SSH (Remote Access)
