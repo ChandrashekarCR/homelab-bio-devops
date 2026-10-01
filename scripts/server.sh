@@ -1,4 +1,4 @@
-*# Server Configurations
+# Server Configurations
 # Author: Chandrashekar CR
 
 # Basic Hardware details
@@ -21,8 +21,10 @@ echo -e "\n=== IP ROUTE ===" && ip -br a | grep "UP" | grep -Po '(?<=\s)\d{1,3}(
 echo -e "\n == PORTS ===" && ss -tuln | grep "LISTEN"
 
 # Services
-echo -e "\n=== SERVICES ENABLED ===" && systemctl list-unit-files --type=service --state=enabled
-echo -e "\n=== SERVICES RUNNING ===" && systemctl list-units --type=service --state=running
+echo -e "\n=== SERVICES ENABLED ===" && systemctl list-unit-files --type=service --state=enabled | head -10
+echo -e "\n=== SERVICES RUNNING ===" && systemctl list-units --type=service --state=running | head -10
+echo -e "\nEnabled: " && systemctl list-unit-files --type=service --state=enabled | wc -l
+echo -e "\nRunning: " && systemctl list-units --type=service --state=running | wc -l
 
 # Storage
 echo -e "\n=== STORAGE ===" && df -Th
