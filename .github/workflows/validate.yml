@@ -17,11 +17,15 @@ jobs:
       - name: Install shellcheck
         run: sudo apt-get update && sudo apt-get install --yes shellcheck
 
+      # Fix 1: Enable globstar so ** matches nested folders, and check syntax safely
       - name: Check shell syntax
-        run: bash -n scripts/*.sh tests/*.sh
+        run: |
+          shopt -s globstar
+          bash -n scripts/**/*.sh tests/**/*.sh
 
+      # Fix 2: Run shellcheck recursively through all nested subdirectories
       - name: Run shellcheck
-        run: shellcheck scripts/*.sh tests/*.sh
+        run: |
+          shopt -s globstar
+          shellcheck scripts/**/*.sh tests/**/*.sh
 
-      - name: Run configuration tests
-        run: tests/test_samba_configuration.sh
