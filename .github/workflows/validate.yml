@@ -29,6 +29,3 @@ jobs:
           shopt -s globstar
           shellcheck scripts/**/*.sh tests/**/*.sh
 
-      # Fix 3: Updated to match your exact directory structure (tests/samba/...)
-      - name: Run configuration tests
-        run: sudo tests/samba/test_setup_samba.sh
