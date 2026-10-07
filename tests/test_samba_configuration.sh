@@ -2,7 +2,8 @@
 
 set -euo pipefail
 
-readonly ROOT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+ROOT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+readonly ROOT_DIR
 readonly CONFIG="${ROOT_DIR}/services/samba/smb.conf"
 readonly SETUP_SCRIPT="${ROOT_DIR}/scripts/setup-samba.sh"
 
@@ -19,6 +20,8 @@ done
 
 grep -q 'LEGACY_USER="amrita"' "${SETUP_SCRIPT}"
 grep -q 'smbpasswd -x' "${SETUP_SCRIPT}"
-! grep -q 'smbpasswd.*amrita' "${CONFIG}"
+if grep -q 'smbpasswd.*amrita' "${CONFIG}"; then
+  exit 1
+fi
 
 printf 'Samba configuration checks passed.\n'

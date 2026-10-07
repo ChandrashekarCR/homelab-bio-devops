@@ -2,8 +2,10 @@
 
 set -euo pipefail
 
-readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-readonly REPO_ROOT="$(cd -- "${SCRIPT_DIR}/.." && pwd)"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+readonly SCRIPT_DIR
+REPO_ROOT="$(cd -- "${SCRIPT_DIR}/.." && pwd)"
+readonly REPO_ROOT
 readonly CONFIG_SOURCE="${REPO_ROOT}/services/samba/smb.conf"
 readonly SAMBA_CONFIG="${SAMBA_CONFIG:-/etc/samba/smb.conf}"
 readonly SHARE_PATH="${SAMBA_SHARE_PATH:-/srv/samba/family}"
