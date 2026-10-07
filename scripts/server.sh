@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Server Configurations
 # Author: Chandrashekar CR
 
