@@ -1,0 +1,12 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    network_mode: 'host'
+    volumes:
+      - /etc/jellyfin/config:/config
+      - /var/cache/jellyfin:/cache
+      - /media/movies:/media/movies:ro
+    restart: 'unless-stopped'
+    extra_hosts:
+      - "host.docker.internal:host-gateway" 
