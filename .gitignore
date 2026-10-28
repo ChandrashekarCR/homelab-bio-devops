@@ -1,0 +1,21 @@
+
+# ---- Secrets: never commit ----
+*.key
+*.psk
+*.pem
+*.env
+.env
+!*.env.example
+**/secrets/
+wg0.conf
+**/wireguard/clients/
+vault-pass*
+*.vault-password
+
+# ---- Noise ----
+*.swp
+*~
+.DS_Store
+
+# ---- Directoris ----
+/docs/book
