@@ -1,0 +1,14 @@
+
+# ── Subject: <type>(<scope>): <summary>  (imperative mood, ≤ 72 chars, no full stop)
+#    types: feat fix docs test chore refactor ci perf build revert
+#    e.g.   fix(lab): make teardown fail loudly when a step fails
+#           feat(pihole): bind DNS to the LAN address only
+#
+# ── Body (optional, wrap at 72): WHY this change? What was wrong, what
+#    did you consider? The diff already shows WHAT changed.
+#
+# ── Footer (optional):
+#    Refs #12                       ← links the issue (the PR says "Closes #12")
+#    BREAKING CHANGE: <what breaks>  ← also add "!" after the type
+#
+# Lines starting with # are removed. An empty message aborts the commit.

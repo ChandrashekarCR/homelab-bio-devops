@@ -1,0 +1,51 @@
+name: ✨ Feature / user story
+description: Something a user (or you, as the operator) needs. One issue = one PR-sized change.
+title: "feat: "
+labels: ["type: feat"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Keep it PR-sized: if it will take more than one session, split it into several issues.
+  - type: textarea
+    id: story
+    attributes:
+      label: User story
+      description: "As a <who>, I want <what>, so that <why>."
+      placeholder: As Mom, I want films to play on the TV in the evening, so that film night just works.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Observable and testable. They become the "How I tested it" section of the PR.
+      value: |
+        - [ ] Given …, when …, then …
+        - [ ]
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [git, network, lab, service, security, monitoring, docs]
+    validations:
+      required: true
+  - type: textarea
+    id: risk
+    attributes:
+      label: Risk and rollback
+      description: What could break for the family? How would you undo it?
+      placeholder: "Risk: DNS for the whole house. Rollback: docker compose down, router DNS back to 192.168.0.1."
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety contract
+      options:
+        - label: I'll build and test it in the lab first (or explain why not in the PR)
+          required: true
+        - label: No secrets, keys or my public IP/DuckDNS name will be committed
+          required: true

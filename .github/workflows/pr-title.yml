@@ -1,0 +1,21 @@
+name: PR title
+
+# The PR title becomes the squash-commit subject on master, so it must follow the convention too.
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  pr-title:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the title with the same rules as the commit-msg hook
+        env:
+          TITLE: ${{ github.event.pull_request.title }} # via env, never ${{ }} inside run: (script injection)
+        run: |
+          printf '%s\n' "$TITLE" > "$RUNNER_TEMP/title"
+          .githooks/commit-msg "$RUNNER_TEMP/title"

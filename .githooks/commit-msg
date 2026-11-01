@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Enforce conventional commit subjects: <type>(<scope>)!: <summary>, at most 72 characters.
+# Installed with: git config core.hooksPath .githooks
+set -euo pipefail
+
+msg_file=$1
+# first line that isn't a comment or blank: that's the subject
+subject=$(grep -vE '^(#|[[:space:]]*$)' "$msg_file" | head -n 1 || true)
+
+# git's own messages and autosquash markers are fine as they are
+if [[ "$subject" =~ ^(Merge|Revert\ \"|fixup!|squash!|amend!) ]]; then
+  exit 0
+fi
+
+types='feat|fix|docs|test|chore|refactor|ci|perf|build|revert'
+pattern="^($types)(\([a-z0-9._/-]+\))?!?: [^ ].*[^.]$"
+
+problems=()
+[[ -n "$subject" ]] || problems+=("the message is empty")
+[[ -z "$subject" || "$subject" =~ $pattern ]] ||
+  problems+=("subject must look like 'type(scope): summary' with type one of: ${types//|/, } (and no full stop at the end)")
+(( ${#subject} <= 72 )) || problems+=("subject is ${#subject} characters; keep it at 72 or fewer")
+
+if (( ${#problems[@]} > 0 )); then
+  echo "Commit message rejected:" >&2
+  printf '   - %s\n' "${problems[@]}" >&2
+  echo "   Your subject: \"$subject\"" >&2
+  echo "   Example:      \"fix(lab): make teardown fail loudly\"" >&2
+  exit 1
+fi
