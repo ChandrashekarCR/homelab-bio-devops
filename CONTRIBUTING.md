@@ -45,3 +45,9 @@ only static checks were run.
 Use one of these commit types: `feat`, `fix`, `docs`, `chore`, `refactor`, or
 `test`. Keep each commit focused. A pull request should explain the problem,
 the design, validation performed, operational impact, and any follow-up work.
+
+## Git guard rails
+- Never commit on `master`. After cloning, run `git config core.hooksPath .githooks`.
+- Keep feature branches current with `git rebase master` (your own branches only).
+- PRs are merged with **Squash and merge**, so the PR title becomes the commit message.
+- `git config --global pull.ff only`: a pull that can't fast-forward stops instead of merging.
