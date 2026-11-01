@@ -2,6 +2,15 @@
 
 A personal, version-controlled DevOps lab for my homelab. It contains documentation, configuration, and automation for running self-hosted services reproducibly.
 
+## 📖 The Homelab Handbook
+
+New to homelabbing? Start with **[The Homelab Handbook](docs/book/README.md)**.
+It's a hands-on, diagram-rich book that takes you from Linux and
+networking basics, through a Proxmox platform (Pi-hole, Samba, Jellyfin,
+WireGuard remote access, HTTPS), to running it for your family with
+backups, monitoring and support, and on to Ansible, CI/CD and incident
+handling. Every lab follows build → test → document → commit → tear down.
+
 ## Infrastructure
 
 - Single Linux server (Ubuntu/Debian) on a local network
