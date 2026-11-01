@@ -1,0 +1,134 @@
+# 🗺️ Homelab Quest: Progress
+
+Run `scripts/xp.sh` to see your level. Tick a box only when its
+"Prove it" step passed.
+
+## ⚔️ Week 1 · Sprint 1 · Foundations (v0.1.0)
+- [ ] D00.1 Install the toolbox · 25 XP
+- [ ] D00.2 Build the progress tracker · 25 XP
+- [ ] D00.3 Project board, milestones and labels · 25 XP
+- [ ] D00.4 Week 1 issues as user stories · 25 XP
+- [ ] D00★ Write docs/notes/why.md · 25 XP
+- [ ] D01.1 Diagnose the diverged master · 25 XP
+- [ ] D01.2 Rescue master safely · 25 XP
+- [ ] D01.3 First proper issue → branch → PR → merge · 25 XP
+- [ ] D01.4 Write the branch and commit conventions · 25 XP
+- [ ] D01★ Reflog time-travel drill · 25 XP
+- [ ] D01★ Fix main/master drift in the agent docs · 25 XP
+- [ ] D02.1 Read a unit file like a pro · 25 XP
+- [ ] D02.2 Find and fix the teardown bugs · 25 XP
+- [ ] D02.3 Rebuild lab-hello hardened, prove it, tear it down · 25 XP
+- [ ] D02.4 Make CI check labs/ · 25 XP
+- [ ] D02★ Replace cron with a systemd timer · 25 XP
+- [ ] D03.1 Measure the baseline (docs/server.md) · 25 XP
+- [ ] D03.2 Make a container by hand with unshare · 25 XP
+- [ ] D03.3 LXD lab platform from a preseed file · 25 XP
+- [ ] D03.4 Preflight + box lifecycle scripts · 25 XP
+- [ ] D03★ Snapshot, break, restore a box · 25 XP
+- [ ] D04.1 Map your real network (docs/networking.md) · 25 XP
+- [ ] D04.2 DHCP reservation for nilayam · 25 XP
+- [ ] D04.3 Build the mini-internet (netlab) · 25 XP
+- [ ] D04.4 Follow a packet with tcpdump · 25 XP
+- [ ] D04★ DNS by hand with dig +trace · 25 XP
+- [ ] D05.1 Catch a TCP handshake · 25 XP
+- [ ] D05.2 NAT and port forwarding in netlab · 25 XP
+- [ ] D05.3 ufw on prod with auto-rollback · 25 XP
+- [ ] D05.4 Exposure review · 25 XP
+- [ ] D05★ Simulate CGNAT in netlab · 50 XP
+- [ ] D06.1 Laptop key and SSH alias · 25 XP
+- [ ] D06.2 Harden sshd with a drop-in and rollback · 25 XP
+- [ ] D06.3 ProxyJump into a lab box · 25 XP
+- [ ] D06.4 Threat model v1 · 25 XP
+- [ ] D06★ SSH local port forward · 25 XP
+- [ ] D07.1 Boss: The Broken Box (5 faults × 30) · 150 XP
+- [ ] D07.2 Sprint review and retro · 25 XP
+- [ ] D07.3 CHANGELOG, tag and release v0.1.0 · 50 XP
+- [ ] D07.4 Flashcard review · 25 XP
+- [ ] D07★ Beat the boss in under 45 minutes · 50 XP
+
+## 🛡️ Week 2 · Sprint 2 · Family services (v0.2.0)
+- [ ] D08.1 User stories and requirements · 25 XP
+- [ ] D08.2 Capacity estimates · 25 XP
+- [ ] D08.3 Architecture, data flow and failure modes · 25 XP
+- [ ] D08.4 ADRs for the big decisions · 25 XP
+- [ ] D08★ Availability maths · 25 XP
+- [ ] D09.1 Data classification, RPO and RTO · 25 XP
+- [ ] D09.2 restic repo and first backup · 25 XP
+- [ ] D09.3 Backup timer and retention · 25 XP
+- [ ] D09.4 Timed restore drill · 25 XP
+- [ ] D09★ Second copy off the box · 50 XP
+- [ ] D10.1 Docker under the hood (lab) · 25 XP
+- [ ] D10.2 Jellyfin as code (pinned, limited) · 25 XP
+- [ ] D10.3 Redeploy safely and verify · 25 XP
+- [ ] D10.4 Jellyfin service card · 25 XP
+- [ ] D10★ Safe Docker clean-up · 25 XP
+- [ ] D11.1 Lab Pi-hole on :5353 and teardown · 25 XP
+- [ ] D11.2 Free port 53 safely · 25 XP
+- [ ] D11.3 Prod Pi-hole as code with local DNS · 25 XP
+- [ ] D11.4 Canary rollout · 25 XP
+- [ ] D11★ ADR: what happens when DNS dies · 25 XP
+- [ ] D12.1 CGNAT check and ADR · 25 XP
+- [ ] D12.2 WireGuard keys and peers in netlab · 25 XP
+- [ ] D12.3 Tunnel through the port forward · 25 XP
+- [ ] D12.4 DuckDNS updater timer · 25 XP
+- [ ] D12★ Break the tunnel three ways · 25 XP
+- [ ] D13.1 Prod wg0, firewall and router forward · 25 XP
+- [ ] D13.2 add-peer script and your phone · 25 XP
+- [ ] D13.3 Samba, Jellyfin and SSH over VPN · 25 XP
+- [ ] D13.4 Onboard one parent (canary) · 25 XP
+- [ ] D13★ Samba hosts allow (defence in depth) · 25 XP
+- [ ] D14.1 Boss: The Café Test (6 checks × 25) · 150 XP
+- [ ] D14.2 Game day and postmortem · 50 XP
+- [ ] D14.3 Release v0.2.0 · 25 XP
+- [ ] D14.4 Sprint retro · 25 XP
+- [ ] D14★ Parent acceptance test · 50 XP
+
+## 🚀 Week 3 · Sprint 3 · Engineer like a team (v1.0.0)
+- [ ] D15.1 bats tests for xp.sh · 25 XP
+- [ ] D15.2 Make preflight testable · 25 XP
+- [ ] D15.3 CI pipeline with quality gates · 25 XP
+- [ ] D15.4 Branch protection · 25 XP
+- [ ] D15★ git bisect drill · 25 XP
+- [ ] D15★ Secret scanning · 25 XP
+- [ ] D16.1 Ansible install, inventory, ping · 25 XP
+- [ ] D16.2 base role on a lab box · 25 XP
+- [ ] D16.3 samba role, idempotent · 25 XP
+- [ ] D16.4 Check-mode diff against prod · 25 XP
+- [ ] D16★ ansible-lint clean · 25 XP
+- [ ] D17.1 Prometheus + Grafana stack as code · 25 XP
+- [ ] D17.2 PromQL + dashboards as code · 25 XP
+- [ ] D17.3 Alert rules + unit tests in CI · 25 XP
+- [ ] D17.4 Alerts to my phone (+ drills) · 25 XP
+- [ ] D17.5 Custom metrics: SMART + backups · 25 XP
+- [ ] D17.6 Family status page · 25 XP
+- [ ] D17★ Dead man's switch (Watchdog) · 25 XP
+- [ ] D17★ Logs with Loki + Alloy · 50 XP
+- [ ] D18.1 TLS by hand with openssl · 25 XP
+- [ ] D18.2 Caddy with internal names · 25 XP
+- [ ] D18.3 Wildcard certificate via DuckDNS · 25 XP
+- [ ] D18.4 Split-horizon DNS verified · 25 XP
+- [ ] D18★ Build the Caddy image in GitHub Actions · 50 XP
+- [ ] D19.1 Smoke tests · 25 XP
+- [ ] D19.2 converge.sh, timer and freeze switch · 25 XP
+- [ ] D19.3 Release → automatic deploy · 25 XP
+- [ ] D19.4 Rollback drill · 25 XP
+- [ ] D19★ Dependabot · 25 XP
+- [ ] D20.1 SLOs and error budget · 25 XP
+- [ ] D20.2 Three runbooks · 25 XP
+- [ ] D20.3 Security review · 25 XP
+- [ ] D20.4 Family guide and emergency sheet · 25 XP
+- [ ] D20★ STRIDE threat model · 25 XP
+- [ ] D21.1 Final boss: rebuild scoreboard · 150 XP
+- [ ] D21.2 Portfolio README and case study · 50 XP
+- [ ] D21.3 Release v1.0.0 · 25 XP
+- [ ] D21.4 Campaign retro and next quest · 25 XP
+- [ ] D21★ Recovery time under 45 minutes · 50 XP
+
+## 🏅 Badges
+- [ ] 🐙 Git Rescuer (D01) · [ ] 🧰 Unit Whisperer (D02) · [ ] 📦 Box Wrangler (D03)
+- [ ] 🛰️ Packet Tracker (D04) · [ ] 🧱 Firewall Tamer (D05) · [ ] 🗝️ Keymaster (D06)
+- [ ] 🐉 Box Slayer (D07) · [ ] 📐 Architect (D08) · [ ] 💾 Data Guardian (D09)
+- [ ] 🐳 Container Captain (D10) · [ ] 🕳️ DNS Sinkholer (D11) · [ ] 🌉 Tunnel Builder (D12–13)
+- [ ] ☕ Café Champion (D14) · [ ] 🤖 Pipeline Pilot (D15) · [ ] 🎻 Conductor (D16)
+- [ ] 👀 Watchtower (D17) · [ ] 🔒 Lock Smith (D18) · [ ] 🚚 Delivery Driver (D19)
+- [ ] 🧑‍🚒 On-call Hero (D20) · [ ] 🏆 Team-Ready (D21)
