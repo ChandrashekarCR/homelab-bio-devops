@@ -1,0 +1,2 @@
+# Force every issue through a template, so each one has acceptance criteria
+blank_issues_enabled: false

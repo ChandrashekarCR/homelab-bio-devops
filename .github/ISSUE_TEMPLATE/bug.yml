@@ -1,0 +1,52 @@
+name: 🐛 Bug / incident
+description: Something that used to work, or should work, doesn't.
+title: "fix: "
+labels: ["type: fix"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Symptom in user words first ("films buffer"), then technical detail.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1.
+        2.
+    validations:
+      required: true
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Who is affected?
+      options:
+        - Family can't use a service (high)
+        - Family notices something is degraded (medium)
+        - Only me / the lab (low)
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Evidence (logs, command output)
+      description: Paste it; it's formatted as code automatically. Remove secrets first.
+      render: shell
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Fixed when…
+      description: The check that proves it's fixed. Ideally a test that fails today.
+      value: |
+        - [ ]
+    validations:
+      required: true

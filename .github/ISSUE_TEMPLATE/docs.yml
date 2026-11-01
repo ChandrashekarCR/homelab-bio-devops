@@ -1,0 +1,39 @@
+name: 📝 Documentation
+description: Missing, wrong or unclear documentation (runbooks, service cards, guides).
+title: "docs: "
+labels: ["type: docs"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Which file or page?
+      placeholder: docs/runbooks/vpn-cant-connect.md
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's missing or wrong?
+    validations:
+      required: true
+  - type: dropdown
+    id: audience
+    attributes:
+      label: Who reads it?
+      options:
+        [
+          me at 23:00 during an incident,
+          a newcomer to the repo,
+          my parents,
+          a recruiter,
+        ]
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Done when…
+      value: |
+        - [ ]
+    validations:
+      required: true
