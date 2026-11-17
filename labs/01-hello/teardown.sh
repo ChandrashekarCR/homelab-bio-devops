@@ -1,15 +1,30 @@
-#!/usr/bin/env  bash
-
+#!/usr/bin/env bash
+# Remove everything lab-hello created. Safe to run repeatedly.
+# Exits non-zero if anything is left behind.
 set -euo pipefail
 
-# Remove everything created in lab 1.2. Can run this again and again
+unit=lab-hello.service
 
-sudo systemctl diable --now lab-hello.service 2>/dev/null || true
-sudo rm -rf /etc/systemd/system/lab-hello.service
+if systemctl list-unit-files "$unit" --no-legend | grep -q .; then
+  sudo systemctl disable --now "$unit"
+fi
+
+sudo rm -f "/etc/systemd/system/$unit"
 sudo systemctl daemon-reload
-sudo rm -rf /srv/lab/hello/
 
-echo "--- teardown verfication ---"
-systemctl list-unit-files 'lab-hello*' --no-legend | grep -q . && echo "FAIL: unit still present" || echo "ok: unit gone"
-sudo ss -tpln | grep -q ":8000" && echo "FAIL: port still listening" || echo "ok: port 8000 free"
-[[ -e /srv/lab/hello/ ]] && echo "FAIL: files reamin" || echo "ok: files gone"
+# reset-failed errors when there's no failed record
+
+sudo systemctl reset-failed "$unit" 2>/dev/null || true
+sudo rm -rf /srv/lab/hello
+
+echo "--- teardown verification ---"
+fail=0
+check() {
+  local what=$1; shift
+  if "$@"; then echo "FAIL: $what"; fail=1; else echo "ok:   no $what"; fi
+}
+check "unit file"        bash -c "systemctl list-unit-files $unit --no-legend | grep -q ."
+check "running process"  systemctl is-active --quiet "$unit"
+check "listener on 8000" bash -c "ss -tlnH 'sport = :8000' | grep -q ."
+check "files"            test -e /srv/lab/hello
+exit "$fail"
